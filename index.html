@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Purtill Woulfe Murphy Solicitors — Website Concept</title>
+<meta name="description" content="A client review concept for Purtill Woulfe Murphy Solicitors in Listowel and Abbeyfeale.">
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+<meta name="theme-color" content="#1d2d3d">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Purtill Woulfe Murphy Solicitors — Website Concept">
+<meta property="og:description" content="A proposed digital direction for the firm's two-office legal practice.">
+<meta property="og:url" content="https://kinopoint.github.io/purtills-solicitors-concept/">
+<link rel="icon" href="./favicon.svg" type="image/svg+xml">
+<script>
+  window.__resources = {
+    "https://unpkg.com/react@18.3.1/umd/react.production.min.js": "./assets/vendor/react.production.min.js",
+    "https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js": "./assets/vendor/react-dom.production.min.js"
+  };
+</script>
+<script src="./assets/js/support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="./assets/css/design-system.css">
+<link rel="stylesheet" href="./assets/css/site.css">
+<script src="./assets/js/image-slot.js"></script>
+<style>
+  body { margin: 0; background: var(--color-bg); }
+  a { color: var(--color-accent-700); text-decoration: none; }
+  a:hover { color: var(--color-accent-900); }
+  @keyframes pwm-rise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+  @keyframes pwm-fade { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+</style>
+</helmet>
+
+<div style="min-height:100vh;background:var(--color-bg);color:var(--color-text);font-family:var(--font-body)">
+  <a class="skip-link" href="#main-content" onClick="{{ skipToContent }}">Skip to content</a>
+
+  <div style="background:var(--color-accent-900);color:var(--color-bg)">
+    <div style="width:100%;max-width:1240px;margin:0 auto;padding:8px clamp(16px,4vw,40px);display:flex;flex-wrap:wrap;gap:6px 22px;align-items:center;font-size:clamp(10.5px,2.6vw,12px);letter-spacing:0.08em;text-transform:uppercase;font-family:var(--font-heading)">
+      <span style="opacity:0.65">Abbeyfeale</span><a href="tel:+3536831106" style="color:inherit">068 31106</a>
+      <span style="opacity:0.65">Listowel</span><a href="tel:+3536828766" style="color:inherit">068 28766</a>
+      <a href="mailto:reception@pwmsolicitors.ie" style="color:inherit;margin-left:auto;opacity:0.85">reception@pwmsolicitors.ie</a>
+    </div>
+  </div>
+
+  <header data-pwm-header="1" style="position:sticky;top:0;z-index:30;background:var(--color-bg);border-bottom:1px solid var(--color-divider)">
+    <div style="width:100%;max-width:1240px;margin:0 auto;padding:0 clamp(16px,4vw,40px);display:flex;align-items:center;gap:clamp(12px,3vw,36px);min-height:72px">
+      <a href="#/" onClick="{{ goHome }}" style="display:flex;flex-direction:column;line-height:1;margin-right:auto;color:var(--color-text)">
+        <span style="font-family:var(--font-heading);font-size:clamp(17px,4.6vw,24px);letter-spacing:-0.01em">PURTILL WOULFE MURPHY</span>
+        <span style="font-size:clamp(9px,2.4vw,11px);letter-spacing:0.24em;text-transform:uppercase;color:var(--color-accent-700);margin-top:5px">Solicitors, Kerry and Limerick</span>
+      </a>
+      <sc-if value="{{ isDesktop }}" hint-placeholder-val="{{ true }}">
+      <nav style="display:flex;align-items:center;gap:clamp(14px,2.2vw,30px)">
+        <sc-for list="{{ navItems }}" as="item" hint-placeholder-count="3">
+          <a href="{{ item.href }}" onClick="{{ item.go }}" aria-current="{{ item.current }}" style="font-family:var(--font-heading);font-size:16px;letter-spacing:0.04em;text-transform:uppercase;color:{{ item.tone }}" style-hover="color:var(--color-accent)">{{ item.label }}</a>
+        </sc-for>
+        <a href="#/contact" onClick="{{ goContact }}" class="btn btn-primary blueprint" style="padding:10px 18px;font-size:14px;letter-spacing:0.06em;text-transform:uppercase">
+          <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+          Talk to us
+        </a>
+      </nav>
+      </sc-if>
+      <sc-if value="{{ isMobile }}">
+        <button type="button" onClick="{{ toggleNav }}" aria-label="Menu" aria-expanded="{{ navOpen }}" aria-controls="mobile-navigation" class="btn btn-secondary" style="width:48px;height:48px;padding:0;flex:none">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"><path d="M3 6h18M3 12h18M3 18h18"></path></svg>
+        </button>
+      </sc-if>
+    </div>
+    <sc-if value="{{ navOpen }}">
+      <div id="mobile-navigation" style="border-top:1px solid var(--color-divider);background:var(--color-bg);animation:pwm-fade .28s ease both">
+        <div style="width:100%;max-width:1240px;margin:0 auto;padding:14px clamp(16px,4vw,40px) 22px;display:grid;gap:2px">
+          <sc-for list="{{ mobileNav }}" as="item" hint-placeholder-count="4">
+            <a href="{{ item.href }}" onClick="{{ item.go }}" aria-current="{{ item.current }}" style="font-family:var(--font-heading);font-size:26px;letter-spacing:0.02em;text-transform:uppercase;padding:11px 0;border-bottom:1px solid var(--color-divider);color:{{ item.tone }}">{{ item.label }}</a>
+          </sc-for>
+          <div style="display:grid;gap:10px;margin-top:16px">
+            <a href="tel:+3536831106" class="btn btn-primary blueprint" style="padding:15px;letter-spacing:0.06em;text-transform:uppercase">
+              <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+              Call Abbeyfeale
+            </a>
+            <a href="tel:+3536828766" class="btn btn-secondary" style="padding:15px;letter-spacing:0.06em;text-transform:uppercase">Call Listowel</a>
+          </div>
+        </div>
+      </div>
+    </sc-if>
+  </header>
+
+  <sc-if value="{{ isHome }}" hint-placeholder-val="{{ true }}">
+  <main id="main-content" tabindex="-1" data-pwm-page="1">
+    <section style="width:100%;max-width:1240px;margin:0 auto;padding:clamp(32px,4.5vw,60px) clamp(16px,4vw,40px) clamp(28px,4vw,48px);display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:clamp(24px,3vw,48px);align-items:center">
+      <div data-reveal="">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:20px">
+          <span style="width:44px;height:1px;background:var(--color-accent)"></span>
+          <span style="font-family:var(--font-heading);font-size:13px;letter-spacing:0.22em;text-transform:uppercase;color:var(--color-accent-700)">We are here to help</span>
+        </div>
+        <h1 style="font-size:clamp(44px,6.4vw,78px);line-height:0.96;letter-spacing:-0.02em;margin:0 0 22px">A people practice.<br><span style="color:var(--color-accent-700)">Proven results.</span></h1>
+        <p style="font-size:clamp(17px,1.6vw,20px);line-height:1.6;max-width:52ch;margin:0 0 14px;text-wrap:pretty">A modern legal practice offering specialist advice, expertise and support to clients locally and internationally, from two offices in North Kerry and West Limerick.</p>
+        <p style="font-size:16px;line-height:1.6;max-width:52ch;margin:0 0 30px;color:color-mix(in srgb, var(--color-text) 68%, transparent);text-wrap:pretty">We listen first, explain in plain language, and never sell you a service you do not genuinely need.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:12px">
+          <a href="#/services" onClick="{{ goServices }}" class="btn btn-primary blueprint" style="padding:14px 26px;font-size:15px;letter-spacing:0.06em;text-transform:uppercase">
+            <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+            See our services
+          </a>
+          <a href="tel:+3536831106" class="btn btn-secondary" style="padding:14px 26px;font-size:15px;letter-spacing:0.06em;text-transform:uppercase">Call 068 31106</a>
+        </div>
+      </div>
+      <div data-reveal="" style="display:flex;justify-content:center">
+        <sc-if value="{{ heroPhoto }}" hint-placeholder-val="{{ true }}">
+          <figure class="blueprint duotone" style="width:100%;max-width:520px;aspect-ratio:4/5;margin:0">
+            <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+            <image-slot id="pwm-hero" shape="rect" placeholder="Drop the firm / office photograph"></image-slot>
+          </figure>
+        </sc-if>
+        <sc-if value="{{ heroPlate }}">
+          <div class="blueprint" style="width:100%;max-width:520px;aspect-ratio:4/5;padding:clamp(20px,3vw,34px);display:flex;flex-direction:column;justify-content:space-between;background:repeating-linear-gradient(0deg,transparent 0 31px,color-mix(in srgb,var(--color-text) 6%,transparent) 31px 32px),repeating-linear-gradient(90deg,transparent 0 31px,color-mix(in srgb,var(--color-text) 6%,transparent) 31px 32px)">
+            <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+            <span style="font-family:var(--font-heading);font-size:13px;letter-spacing:0.2em;text-transform:uppercase;color:var(--color-accent-700)">North Kerry and West Limerick</span>
+            <div style="display:grid;gap:18px">
+              <div><div style="font-family:var(--font-heading);font-size:clamp(38px,5vw,58px);line-height:1">9</div><div style="font-size:13px;letter-spacing:0.12em;text-transform:uppercase;color:color-mix(in srgb,var(--color-text) 60%,transparent)">Areas of practice</div></div>
+              <div><div style="font-family:var(--font-heading);font-size:clamp(38px,5vw,58px);line-height:1">2</div><div style="font-size:13px;letter-spacing:0.12em;text-transform:uppercase;color:color-mix(in srgb,var(--color-text) 60%,transparent)">Offices in Abbeyfeale and Listowel</div></div>
+            </div>
+          </div>
+        </sc-if>
+      </div>
+    </section>
+
+    <section style="border-top:1px solid var(--color-divider);border-bottom:1px solid var(--color-divider)">
+      <div style="width:100%;max-width:1240px;margin:0 auto;padding:clamp(40px,5.5vw,72px) clamp(16px,4vw,40px)">
+        <div style="display:flex;flex-wrap:wrap;gap:24px;align-items:flex-end;justify-content:space-between;margin-bottom:clamp(20px,2.6vw,30px)">
+          <div style="max-width:56ch">
+            <span style="font-family:var(--font-heading);font-size:13px;letter-spacing:0.22em;text-transform:uppercase;color:var(--color-accent-700)">What we do</span>
+            <h2 style="font-size:clamp(32px,4.2vw,50px);margin:10px 0 12px;letter-spacing:-0.02em">Our services.</h2>
+            <p style="font-size:17px;line-height:1.6;margin:0;color:color-mix(in srgb, var(--color-text) 72%, transparent);text-wrap:pretty">A young and vibrant boutique firm with offices in North Kerry and West Limerick. Over the last decade we have established ourselves as one of the premier practices in the area.</p>
+          </div>
+          <a href="#/services" onClick="{{ goServices }}" class="btn btn-secondary" style="padding:12px 22px;letter-spacing:0.06em;text-transform:uppercase">All services →</a>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:clamp(16px,2vw,26px)">
+          <sc-for list="{{ services }}" as="s" hint-placeholder-count="9">
+            <a href="{{ s.href }}" data-reveal="" onClick="{{ s.open }}" class="blueprint" style="display:flex;flex-direction:column;gap:12px;padding:clamp(20px,2.4vw,28px);color:var(--color-text)" style-hover="background:color-mix(in srgb, var(--color-accent) 8%, transparent)">
+              <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+              <h3 style="font-size:24px;margin:0;letter-spacing:-0.01em">{{ s.title }}</h3>
+              <p style="font-size:14.5px;line-height:1.6;margin:0;flex:1;color:color-mix(in srgb, var(--color-text) 66%, transparent);text-wrap:pretty">{{ s.summary }}</p>
+              <span style="font-family:var(--font-heading);font-size:13px;letter-spacing:0.14em;text-transform:uppercase;color:var(--color-accent-700)">Read more →</span>
+            </a>
+          </sc-for>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div style="width:100%;max-width:1240px;margin:0 auto;padding:clamp(40px,5.5vw,72px) clamp(16px,4vw,40px);display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(24px,3vw,48px);align-items:center">
+        <div>
+          <span style="font-family:var(--font-heading);font-size:13px;letter-spacing:0.22em;text-transform:uppercase;color:var(--color-accent-700)">How we work</span>
+          <h2 style="font-size:clamp(30px,3.6vw,44px);margin:10px 0 14px;letter-spacing:-0.02em">Long relationships, not transactions.</h2>
+          <p style="font-size:16.5px;line-height:1.7;margin:0 0 14px;max-width:56ch;text-wrap:pretty">We view the forming of long, mutually beneficial relationships with our clients as the cornerstone of our business. Those relationships can only be created by treating clients with the trust and respect they deserve.</p>
+          <p style="font-size:16.5px;line-height:1.7;margin:0;max-width:56ch;color:color-mix(in srgb, var(--color-text) 70%, transparent);text-wrap:pretty">You should not be contacting your solicitor only when something goes wrong. Good advice given in advance is what keeps it from going wrong at all.</p>
+        </div>
+        <div style="display:grid;gap:14px">
+          <sc-for list="{{ principles }}" as="p" hint-placeholder-count="3">
+            <div data-reveal="" class="blueprint" style="padding:22px 24px;display:flex;gap:18px;align-items:flex-start">
+              <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+              <span style="width:10px;height:10px;flex:none;margin-top:10px;border:1px solid var(--color-accent)"></span>
+              <div>
+                <h4 style="font-size:20px;margin:0 0 6px">{{ p.title }}</h4>
+                <p style="font-size:14.5px;line-height:1.6;margin:0;color:color-mix(in srgb, var(--color-text) 66%, transparent);text-wrap:pretty">{{ p.body }}</p>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </section>
+
+    <sc-if value="{{ showTestimonial }}" hint-placeholder-val="{{ true }}">
+    <section style="background:var(--color-accent-900);color:var(--color-bg)">
+      <div style="width:100%;max-width:1240px;margin:0 auto;padding:clamp(40px,5.5vw,72px) clamp(16px,4vw,40px)">
+        <span style="font-family:var(--font-heading);font-size:13px;letter-spacing:0.22em;text-transform:uppercase;opacity:0.7">What our clients say</span>
+        <blockquote style="margin:16px 0 0;white-space:nowrap;font-family:var(--font-heading);font-size:clamp(16px,3.3vw,46px);line-height:1.08;letter-spacing:-0.02em">“Excellent service and really friendly staff.”</blockquote>
+        <p style="max-width:62ch;font-size:16.5px;line-height:1.7;margin:20px 0 16px;opacity:0.86;text-wrap:pretty">I really wasn’t sure what to expect as I had never worked with a solicitor before, but Purtill Solicitors handled our conveyancing when we were buying our new home and they were just fantastic. Always great to answer our questions, sorted out any problems, and made a difficult property purchase as smooth as possible.</p>
+        <div style="display:flex;align-items:center;gap:12px;font-family:var(--font-heading);font-size:14px;letter-spacing:0.16em;text-transform:uppercase"><span style="width:32px;height:1px;background:currentColor;opacity:0.5"></span>Jane B, conveyancing client</div>
+      </div>
+    </section>
+    </sc-if>
+
+    <sc-if value="{{ showAccreditations }}" hint-placeholder-val="{{ true }}">
+    <section style="border-bottom:1px solid var(--color-divider)">
+      <div style="width:100%;max-width:1240px;margin:0 auto;padding:clamp(34px,4.5vw,56px) clamp(16px,4vw,40px)">
+        <span style="font-family:var(--font-heading);font-size:13px;letter-spacing:0.22em;text-transform:uppercase;color:var(--color-accent-700)">Accreditations</span>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:clamp(16px,2vw,26px);margin-top:20px">
+          <sc-for list="{{ accreditations }}" as="a" hint-placeholder-count="2">
+            <a href="{{ a.href }}" data-reveal="" target="_blank" rel="noopener" class="blueprint" style="padding:26px;min-height:120px;display:flex;flex-direction:column;justify-content:center;gap:8px;color:var(--color-text)" style-hover="background:color-mix(in srgb, var(--color-accent) 8%, transparent)">
+              <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+              <span style="font-family:var(--font-heading);font-size:21px;line-height:1.15">{{ a.name }}</span>
+              <span style="font-size:12.5px;letter-spacing:0.1em;text-transform:uppercase;color:color-mix(in srgb, var(--color-text) 55%, transparent)">{{ a.note }}</span>
+            </a>
+          </sc-for>
+        </div>
+      </div>
+    </section>
+    </sc-if>
+  </main>
+  </sc-if>
+
+  <sc-if value="{{ isServices }}">
+  <main id="main-content" tabindex="-1" data-pwm-page="1">
+    <section style="width:100%;max-width:1240px;margin:0 auto;padding:clamp(32px,4.5vw,60px) clamp(16px,4vw,40px) clamp(20px,2.5vw,32px)">
+      <span style="font-family:var(--font-heading);font-size:13px;letter-spacing:0.22em;text-transform:uppercase;color:var(--color-accent-700)">Services</span>
+      <h1 data-pwm-services-heading style="font-size:clamp(40px,5.6vw,68px);margin:10px 0 16px;letter-spacing:-0.02em">Expert advice, clearly explained.</h1>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(20px,3vw,48px);max-width:1000px">
+        <p style="font-size:16.5px;line-height:1.7;margin:0;text-wrap:pretty">We have established a reputation as a practice that listens to our clients and gives clear and expert advice in a prompt manner. Whether you are succession planning and using tax exemptions, or buying and selling property or assets, we make sure you have the most up-to-date and relevant advice possible.</p>
+        <p style="font-size:16.5px;line-height:1.7;margin:0;color:color-mix(in srgb, var(--color-text) 70%, transparent);text-wrap:pretty">We believe in making continuous improvements to the way we work. Every file runs on one integrated office-wide practice management system, so we have a clear picture of what has been done at every stage of every case.</p>
+      </div>
+    </section>
+    <section style="border-top:1px solid var(--color-divider)">
+      <div style="width:100%;max-width:1240px;margin:0 auto;padding:clamp(26px,3vw,40px) clamp(16px,4vw,40px)">
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:clamp(16px,2vw,26px)">
+          <sc-for list="{{ services }}" as="s" hint-placeholder-count="9">
+            <a href="{{ s.href }}" data-reveal="" onClick="{{ s.open }}" class="blueprint" style="display:flex;flex-direction:column;gap:12px;padding:clamp(22px,2.4vw,30px);color:var(--color-text)" style-hover="background:color-mix(in srgb, var(--color-accent) 8%, transparent)">
+              <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+              <h3 style="font-size:25px;margin:0;letter-spacing:-0.01em">{{ s.title }}</h3>
+              <p style="font-size:14.5px;line-height:1.6;margin:0;flex:1;color:color-mix(in srgb, var(--color-text) 66%, transparent);text-wrap:pretty">{{ s.summary }}</p>
+              <span style="font-family:var(--font-heading);font-size:13px;letter-spacing:0.14em;text-transform:uppercase;color:var(--color-accent-700)">Read more →</span>
+            </a>
+          </sc-for>
+        </div>
+      </div>
+    </section>
+  </main>
+  </sc-if>
+
+  <sc-if value="{{ isService }}">
+  <main id="main-content" tabindex="-1" data-pwm-page="1">
+    <section style="width:100%;max-width:1240px;margin:0 auto;padding:clamp(24px,3vw,40px) clamp(16px,4vw,40px) clamp(34px,4.5vw,56px)">
+      <div style="display:flex;gap:10px;align-items:center;font-family:var(--font-heading);font-size:13px;letter-spacing:0.16em;text-transform:uppercase;margin-bottom:26px">
+        <a href="#/services" onClick="{{ goServices }}" style="color:var(--color-accent-700)">Services</a>
+        <span style="opacity:0.4">/</span>
+        <span style="color:color-mix(in srgb, var(--color-text) 55%, transparent)">{{ svc.title }}</span>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(24px,3vw,48px);align-items:start">
+        <div>
+          <h1 style="font-size:clamp(36px,4.8vw,60px);margin:12px 0 24px;letter-spacing:-0.02em">{{ svc.title }}</h1>
+          <sc-for list="{{ svc.paras }}" as="p" hint-placeholder-count="2">
+            <p style="font-size:16.5px;line-height:1.7;margin:0 0 16px;max-width:62ch;text-wrap:pretty">{{ p }}</p>
+          </sc-for>
+          <div class="blueprint" style="margin-top:30px;padding:clamp(22px,2.6vw,32px)">
+            <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+            <h4 style="font-size:14px;letter-spacing:0.18em;text-transform:uppercase;color:var(--color-accent-700);margin:0 0 18px">What this covers</h4>
+            <ul style="list-style:none;margin:0;padding:0;display:grid;gap:12px">
+              <sc-for list="{{ svc.bullets }}" as="b" hint-placeholder-count="5">
+                <li style="display:flex;gap:12px;align-items:flex-start;font-size:15.5px;line-height:1.6">
+                  <span style="color:var(--color-accent);font-family:var(--font-heading);line-height:1.5">+</span>
+                  <span style="text-wrap:pretty">{{ b }}</span>
+                </li>
+              </sc-for>
+            </ul>
+          </div>
+          <sc-if value="{{ svc.note }}">
+            <p style="margin:20px 0 0;font-size:13px;line-height:1.6;max-width:62ch;color:color-mix(in srgb, var(--color-text) 55%, transparent)">{{ svc.note }}</p>
+          </sc-if>
+        </div>
+        <aside style="display:grid;gap:20px;position:sticky;top:100px">
+          <div class="blueprint" style="padding:clamp(22px,2.6vw,30px);background:var(--color-accent-900);color:var(--color-bg)">
+            <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+            <h3 style="font-size:26px;margin:0 0 10px">Talk to us about this.</h3>
+            <p style="font-size:14.5px;line-height:1.6;margin:0 0 20px;opacity:0.85">A short conversation is usually enough to tell you where you stand and what it will cost.</p>
+            <div style="display:grid;gap:8px;font-size:15px">
+              <a href="tel:+3536831106" style="color:inherit">Abbeyfeale: 068 31106</a>
+              <a href="tel:+3536828766" style="color:inherit">Listowel: 068 28766</a>
+              <a href="mailto:reception@pwmsolicitors.ie" style="color:inherit;opacity:0.85">reception@pwmsolicitors.ie</a>
+            </div>
+            <a href="#/contact" onClick="{{ goContact }}" class="btn" style="margin-top:22px;width:100%;background:var(--color-bg);color:var(--color-accent-900);border-color:var(--color-bg);padding:13px;letter-spacing:0.06em;text-transform:uppercase">Send an enquiry</a>
+          </div>
+          <div class="blueprint" style="padding:clamp(22px,2.6vw,30px)">
+            <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+            <h4 style="font-size:14px;letter-spacing:0.18em;text-transform:uppercase;color:var(--color-accent-700);margin:0 0 16px">Other services</h4>
+            <div style="display:grid;gap:10px">
+              <sc-for list="{{ svcOthers }}" as="o" hint-placeholder-count="5">
+                <a href="{{ o.href }}" onClick="{{ o.open }}" style="display:flex;justify-content:space-between;gap:12px;font-size:15px;color:var(--color-text);border-bottom:1px solid var(--color-divider);padding-bottom:9px" style-hover="color:var(--color-accent)">
+                  <span>{{ o.title }}</span><span style="color:var(--color-accent-700)">→</span>
+                </a>
+              </sc-for>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+  </sc-if>
+
+  <sc-if value="{{ isTeam }}">
+  <main id="main-content" tabindex="-1" data-pwm-page="1">
+    <section style="width:100%;max-width:1240px;margin:0 auto;padding:clamp(32px,4.5vw,60px) clamp(16px,4vw,40px)">
+      <span style="font-family:var(--font-heading);font-size:13px;letter-spacing:0.22em;text-transform:uppercase;color:var(--color-accent-700)">Our team</span>
+      <h1 style="font-size:clamp(40px,5.6vw,68px);margin:10px 0 16px;letter-spacing:-0.02em;max-width:34ch">Dedicated people from diverse backgrounds.</h1>
+      <p style="font-size:17px;line-height:1.7;max-width:82ch;margin:0 0 clamp(24px,3vw,40px);color:color-mix(in srgb, var(--color-text) 72%, transparent);text-wrap:pretty">We view the forming of long, mutually beneficial relationships with our clients as the cornerstone of our business, and the people below are how that happens.</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:clamp(20px,2.4vw,32px)">
+        <sc-for list="{{ team }}" as="m" hint-placeholder-count="6">
+          <div data-reveal="">
+            <figure class="blueprint duotone" style="aspect-ratio:3/4;margin:0 0 18px">
+              <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+              <image-slot id="{{ m.slot }}" shape="rect" placeholder="Portrait"></image-slot>
+            </figure>
+            <h3 style="font-size:24px;margin:0 0 4px">{{ m.name }}</h3>
+            <div style="font-family:var(--font-heading);font-size:13px;letter-spacing:0.16em;text-transform:uppercase;color:var(--color-accent-700);margin-bottom:10px">{{ m.role }}</div>
+            <p style="font-size:14.5px;line-height:1.6;margin:0 0 10px;color:color-mix(in srgb, var(--color-text) 66%, transparent);text-wrap:pretty">{{ m.areas }}</p>
+            <a href="{{ m.mailto }}" style="font-size:14px">{{ m.email }}</a>
+          </div>
+        </sc-for>
+      </div>
+    </section>
+  </main>
+  </sc-if>
+
+  <sc-if value="{{ isContact }}">
+  <main id="main-content" tabindex="-1" data-pwm-page="1">
+    <section style="width:100%;max-width:1240px;margin:0 auto;padding:clamp(32px,4.5vw,60px) clamp(16px,4vw,40px)">
+      <span style="font-family:var(--font-heading);font-size:13px;letter-spacing:0.22em;text-transform:uppercase;color:var(--color-accent-700)">Contact</span>
+      <h1 style="font-size:clamp(40px,5.6vw,68px);margin:10px 0 16px;letter-spacing:-0.02em;max-width:24ch">Two offices, one call away.</h1>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(20px,3vw,40px);margin-top:clamp(22px,2.4vw,32px);align-items:start">
+        <div style="display:grid;gap:20px">
+          <sc-for list="{{ offices }}" as="o" hint-placeholder-count="2">
+            <div data-reveal="" class="blueprint" style="padding:clamp(22px,2.6vw,32px)">
+              <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+              <h3 style="font-size:27px;margin:0 0 10px">{{ o.city }}</h3>
+              <p style="font-size:15.5px;line-height:1.6;margin:0 0 14px">{{ o.address }}</p>
+              <div style="display:grid;gap:6px;font-size:15px">
+                <a href="{{ o.tel }}">{{ o.phone }}</a>
+                <span style="color:color-mix(in srgb, var(--color-text) 55%, transparent);font-size:13.5px;letter-spacing:0.08em">{{ o.dx }}</span>
+              </div>
+            </div>
+          </sc-for>
+          <div data-reveal="" class="blueprint" style="padding:clamp(22px,2.6vw,32px)">
+            <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+            <div style="font-family:var(--font-heading);font-size:13px;letter-spacing:0.2em;text-transform:uppercase;color:var(--color-accent-700);margin-bottom:12px">Email &amp; social</div>
+            <div style="display:grid;gap:8px;font-size:15px">
+              <a href="mailto:reception@pwmsolicitors.ie">reception@pwmsolicitors.ie</a>
+              <a href="https://www.facebook.com/Purtill-Solicitors-1118596618169151/" target="_blank" rel="noopener">Facebook</a>
+              <a href="https://twitter.com/purtillsols" target="_blank" rel="noopener">Twitter</a>
+              <a href="https://www.linkedin.com/in/margarita-purtill-b1030b23/" target="_blank" rel="noopener">LinkedIn</a>
+            </div>
+          </div>
+        </div>
+        <sc-if value="{{ showForm }}" hint-placeholder-val="{{ true }}">
+        <div data-reveal="" class="blueprint" style="padding:clamp(24px,3vw,40px)">
+          <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+          <h2 style="font-size:32px;margin:0 0 8px">Send an enquiry.</h2>
+          <p style="font-size:15px;line-height:1.6;margin:0 0 24px;color:color-mix(in srgb, var(--color-text) 66%, transparent)">Tell us briefly what you need. We reply the same working day where we can.</p>
+          <sc-if value="{{ sent }}">
+            <div role="status" style="padding:20px;border:1px solid var(--color-accent);font-size:15.5px;line-height:1.6">Your email application should now be open with the enquiry prepared. Review it before sending. If it did not open, email <a href="mailto:reception@pwmsolicitors.ie">reception@pwmsolicitors.ie</a>.</div>
+          </sc-if>
+          <sc-if value="{{ notSent }}" hint-placeholder-val="{{ true }}">
+          <form onSubmit="{{ submit }}" style="display:grid;gap:16px">
+            <div class="field"><label for="enquiry-name">Your name</label><input id="enquiry-name" name="name" class="input" autocomplete="name" required="required" aria-required="true" value="{{ form.name }}" onInput="{{ onName }}" style="min-height:46px"></div>
+            <div class="field"><label for="enquiry-email">Email</label><input id="enquiry-email" name="email" class="input" type="email" autocomplete="email" required="required" aria-required="true" value="{{ form.email }}" onInput="{{ onEmail }}" style="min-height:46px"></div>
+            <div class="field"><label for="enquiry-phone">Phone</label><input id="enquiry-phone" name="phone" class="input" type="tel" autocomplete="tel" value="{{ form.phone }}" onInput="{{ onPhone }}" style="min-height:46px"></div>
+            <fieldset class="field" style="border:0;padding:0;margin:0"><legend style="font-size:12px;margin-bottom:5px;color:color-mix(in srgb,var(--color-text) 70%,transparent)">Which office suits you?</legend>
+              <div class="seg" style="width:100%">
+                <label class="seg-opt" style="flex:1;justify-content:center;padding:11px 12px"><input type="radio" name="office" value="Abbeyfeale" checked="{{ officeAbb }}" onChange="{{ pickAbb }}">Abbeyfeale</label>
+                <label class="seg-opt" style="flex:1;justify-content:center;padding:11px 12px"><input type="radio" name="office" value="Listowel" checked="{{ officeLis }}" onChange="{{ pickLis }}">Listowel</label>
+              </div>
+            </fieldset>
+            <div class="field"><label for="enquiry-message">How can we help?</label><textarea id="enquiry-message" name="message" class="input" required="required" aria-required="true" value="{{ form.msg }}" onInput="{{ onMsg }}" style="min-height:130px"></textarea></div>
+            <button type="submit" class="btn btn-primary blueprint" style="padding:15px;letter-spacing:0.06em;text-transform:uppercase;font-size:15px">
+              <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+              Prepare email enquiry
+            </button>
+            <p style="font-size:12.5px;line-height:1.55;margin:0;color:color-mix(in srgb, var(--color-text) 52%, transparent)">This preview opens your email application and does not store information on the website. Sending an enquiry does not create a solicitor and client relationship. Please do not include confidential details until the firm has confirmed it can act for you.</p>
+          </form>
+          </sc-if>
+        </div>
+        </sc-if>
+      </div>
+    </section>
+  </main>
+  </sc-if>
+
+  <section style="border-top:1px solid var(--color-divider)">
+    <div style="width:100%;max-width:1240px;margin:0 auto;padding:clamp(36px,4.5vw,60px) clamp(16px,4vw,40px);display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(24px,4vw,56px);align-items:center">
+      <div>
+        <h2 data-pwm-cta-heading style="font-size:clamp(30px,4vw,46px);margin:0 0 12px;letter-spacing:-0.02em;white-space:nowrap">We are here to help.</h2>
+        <p style="font-size:16.5px;line-height:1.7;margin:0;max-width:52ch;color:color-mix(in srgb, var(--color-text) 70%, transparent);text-wrap:pretty">Call either office, or send us a short note about your situation.</p>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:flex-start">
+        <a href="#/contact" onClick="{{ goContact }}" class="btn btn-primary blueprint" style="padding:15px 28px;letter-spacing:0.06em;text-transform:uppercase;font-size:15px">
+          <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+          Contact us
+        </a>
+        <a href="tel:+3536828766" class="btn btn-secondary" style="padding:15px 28px;letter-spacing:0.06em;text-transform:uppercase;font-size:15px">Call Listowel</a>
+      </div>
+    </div>
+  </section>
+
+  <footer style="background:var(--color-accent-900);color:var(--color-bg)">
+    <div style="width:100%;max-width:1240px;margin:0 auto;padding:clamp(40px,5vw,64px) clamp(16px,4vw,40px) 28px;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:clamp(24px,3vw,48px)">
+      <div>
+        <div style="font-family:var(--font-heading);font-size:22px;line-height:1.1;margin-bottom:10px">PURTILL WOULFE MURPHY<br>SOLICITORS</div>
+        <p style="font-size:14px;line-height:1.6;margin:0;opacity:0.72;max-width:34ch">A modern legal practice offering specialist advice, expertise and support to clients locally and internationally.</p>
+      </div>
+      <div>
+        <div style="font-family:var(--font-heading);font-size:12.5px;letter-spacing:0.2em;text-transform:uppercase;opacity:0.6;margin-bottom:12px">Abbeyfeale office</div>
+        <p style="font-size:14.5px;line-height:1.7;margin:0;opacity:0.9">The Square, Abbeyfeale, Limerick. V94 D37T<br>DX58001<br><a href="tel:+3536831106" style="color:inherit">068 31106 / 068 32099</a></p>
+      </div>
+      <div>
+        <div style="font-family:var(--font-heading);font-size:12.5px;letter-spacing:0.2em;text-transform:uppercase;opacity:0.6;margin-bottom:12px">Listowel office</div>
+        <p style="font-size:14.5px;line-height:1.7;margin:0;opacity:0.9">87 Church Street, Listowel, Kerry. V31 E122<br>DX85008<br><a href="tel:+3536828766" style="color:inherit">068 28766</a></p>
+      </div>
+      <div>
+        <div style="font-family:var(--font-heading);font-size:12.5px;letter-spacing:0.2em;text-transform:uppercase;opacity:0.6;margin-bottom:12px">Links</div>
+        <div style="display:grid;gap:8px;font-size:14.5px">
+          <a href="#/services" onClick="{{ goServices }}" style="color:inherit;opacity:0.9">Services</a>
+          <a href="#/team" onClick="{{ goTeam }}" style="color:inherit;opacity:0.9">Our team</a>
+          <a href="#/contact" onClick="{{ goContact }}" style="color:inherit;opacity:0.9">Contact</a>
+          <a href="https://purtillsolicitors.com/privacy-policy/" target="_blank" rel="noopener" style="color:inherit;opacity:0.9">Privacy policy</a>
+        </div>
+      </div>
+    </div>
+    <div style="width:100%;max-width:1240px;margin:0 auto;padding:0 clamp(16px,4vw,40px) 34px">
+      <div style="border-top:1px solid color-mix(in srgb, #f2f2f3 22%, transparent);padding-top:18px;display:flex;flex-wrap:wrap;gap:10px 24px;font-size:12.5px;letter-spacing:0.08em;text-transform:uppercase;opacity:0.62">
+        <span>© Purtill Woulfe Murphy Solicitors 2026</span>
+        <span style="margin-left:auto">Regulated by the Law Society of Ireland</span>
+      </div>
+      <span class="concept-note">Design concept for review. Content, claims and imagery require client approval before production launch.</span>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;heroMode&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;photo&quot;,&quot;plate&quot;],&quot;default&quot;:&quot;photo&quot;,&quot;tsType&quot;:&quot;'photo' | 'plate'&quot;,&quot;section&quot;:&quot;Home&quot;},&quot;showTestimonial&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Home&quot;},&quot;showAccreditations&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Home&quot;},&quot;showForm&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Contact&quot;}}">
+class Component extends DCLogic {
+  state = { page: 'home', svc: 0, office: 'Abbeyfeale', sent: false, navOpen: false,
+            vw: typeof window === 'undefined' ? 1280 : window.innerWidth,
+            form: { name: '', email: '', phone: '', msg: '' } };
+
+  componentDidMount() {
+    this._onResize = () => this.setState({ vw: window.innerWidth });
+    this._onScroll = () => {
+      const h = document.querySelector('[data-pwm-header]');
+      if (h) h.style.boxShadow = window.scrollY > 8 ? 'var(--shadow-sm)' : 'none';
+    };
+    this._onRoute = () => this.syncRoute();
+    this._lastView = this.state.page + ':' + this.state.svc;
+    window.addEventListener('resize', this._onResize);
+    window.addEventListener('scroll', this._onScroll, { passive: true });
+    window.addEventListener('popstate', this._onRoute);
+    window.addEventListener('hashchange', this._onRoute);
+    this.syncRoute();
+    this.updateDocumentTitle();
+    this.setupReveal();
+  }
+
+  componentDidUpdate() {
+    const view = this.state.page + ':' + this.state.svc;
+    if (view !== this._lastView) {
+      this._lastView = view;
+      const m = document.querySelector('[data-pwm-page]');
+      if (m) { m.style.animation = 'none'; void m.offsetWidth; m.style.animation = 'pwm-fade .38s ease both'; }
+      this.setupReveal();
+      this.updateDocumentTitle();
+    }
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this._onResize);
+    window.removeEventListener('scroll', this._onScroll);
+    window.removeEventListener('popstate', this._onRoute);
+    window.removeEventListener('hashchange', this._onRoute);
+    if (this._io) this._io.disconnect();
+  }
+
+  slugify = (value) => value.toLowerCase()
+    .replace(/&/g, 'and')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-|-$/g, '');
+
+  hrefFor = (page, svc) => {
+    if (page === 'home') return '#/';
+    if (page === 'service') {
+      const item = this.services[svc == null ? this.state.svc : svc];
+      return item ? '#/services/' + this.slugify(item.title) : '#/services';
+    }
+    return '#/' + page;
+  };
+
+  routeFromLocation = () => {
+    if (typeof window === 'undefined') return { page: 'home', svc: 0 };
+    const parts = window.location.hash.replace(/^#\/?/, '').split('/').filter(Boolean);
+    if (!parts.length) return { page: 'home', svc: 0 };
+    if (parts[0] === 'services' && parts[1]) {
+      const svc = this.services.findIndex(item => this.slugify(item.title) === parts[1]);
+      return svc >= 0 ? { page: 'service', svc } : { page: 'services', svc: 0 };
+    }
+    if (parts[0] === 'services') return { page: 'services', svc: this.state.svc };
+    if (parts[0] === 'team') return { page: 'team', svc: this.state.svc };
+    if (parts[0] === 'contact') return { page: 'contact', svc: this.state.svc };
+    if (parts[0] === 'main-content') return { page: this.state.page, svc: this.state.svc };
+    return { page: 'home', svc: 0 };
+  };
+
+  syncRoute = () => {
+    const route = this.routeFromLocation();
+    if (route.page !== this.state.page || route.svc !== this.state.svc || this.state.navOpen) {
+      this.setState({ page: route.page, svc: route.svc, navOpen: false });
+    }
+  };
+
+  updateDocumentTitle = () => {
+    if (typeof document === 'undefined') return;
+    const suffix = 'Purtill Woulfe Murphy Solicitors — Website Concept';
+    const labels = { home: '', services: 'Services', team: 'Our Team', contact: 'Contact' };
+    const label = this.state.page === 'service'
+      ? this.services[this.state.svc]?.title
+      : labels[this.state.page];
+    document.title = label ? label + ' | ' + suffix : suffix;
+  };
+
+  setupReveal() {
+    if (typeof window === 'undefined' || !window.IntersectionObserver) return;
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    if (this._io) this._io.disconnect();
+    const run = () => {
+      const els = Array.from(document.querySelectorAll('[data-reveal]'));
+      els.forEach(el => { if (el.getBoundingClientRect().top > window.innerHeight * 0.9) el.style.opacity = '0'; });
+      this._io = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (!e.isIntersecting) return;
+          const el = e.target;
+          const sibs = Array.from(el.parentElement.children).filter(c => c.hasAttribute('data-reveal'));
+          const i = Math.min(Math.max(sibs.indexOf(el), 0), 5);
+          el.style.opacity = '';
+          el.style.animation = 'pwm-rise .6s cubic-bezier(.2,.7,.2,1) ' + (i * 70) + 'ms both';
+          this._io.unobserve(el);
+        });
+      }, { rootMargin: '0px 0px -6% 0px', threshold: 0.04 });
+      els.forEach(el => this._io.observe(el));
+    };
+    requestAnimationFrame(() => requestAnimationFrame(run));
+  }
+
+  services = [
+    { title: 'Residential & Commercial Property',
+      summary: 'Buying, selling, building or leasing, with conveyancing handled openly and at a fair price.',
+      paras: ['We provide sound advice and ensure that you are fully protected, whether you are buying or selling property. We maintain a refreshingly open and responsive service, and we make a point of being approachable and contactable for our clients.',
+              'We work hard to deliver an efficient conveyancing service at a reasonable price, all to ensure that you achieve a smooth transaction from start to finish.'],
+      bullets: ['Buying and selling residential houses, commercial property and investment property',
+                'Property development, including residential developments, office blocks and industrial estates',
+                'Financial arrangements, including mortgages to buy or build and switching an existing mortgage for a better rate',
+                'Leases, whether private residential or commercial',
+                'Sale of liquor licences, licence agreements and building agreements'] },
+    { title: 'Wills, Trusts & Succession Planning',
+      summary: 'Putting your affairs in order, with the reliefs and exemptions that apply to your family or business.',
+      paras: ['If there are legal mechanisms available that are beneficial for you or your business, we make sure you are in a position to avail of them. Succession planning is proactive work: done early, it protects the people you intend it to protect.',
+              'We take the time to understand the family and the assets before drafting anything, and we explain the tax position in plain language.'],
+      bullets: ['Making and updating your will', 'Family farm and business succession',
+                'Trusts for children and vulnerable beneficiaries', 'Capital acquisitions tax reliefs and exemptions',
+                'Life assurance and inheritance tax planning'] },
+    { title: 'Administration of Estates',
+      summary: 'Probate work handled carefully, so an estate is settled without avoidable delay or dispute.',
+      paras: ['Administering an estate is detailed work carried out at a difficult time. We take on the paperwork, keep the beneficiaries informed and move matters along at a steady, predictable pace.'],
+      bullets: ['Applications for grants of probate', 'Letters of administration where there is no will',
+                'Estate accounts and distribution to beneficiaries', 'Revenue filings and clearance',
+                'Advice where an estate or a will is in dispute'] },
+    { title: 'Enduring Power of Attorney & Wardship',
+      summary: 'Arrangements that let someone you trust act for you if you are ever unable to act for yourself.',
+      paras: ['An enduring power of attorney is one of the most useful documents a person can put in place, and one of the most commonly left too late. We advise on the arrangement that fits the circumstances and take care of the registration process.'],
+      bullets: ['Advice on and drafting of enduring powers of attorney',
+                'Decision support arrangements under the assisted decision-making legislation',
+                'Registration and the notification requirements that go with it',
+                'Advice for families where capacity is already in question'] },
+    { title: 'Family Law',
+      summary: 'Separation, divorce, children and maintenance, handled with discretion and without escalation.',
+      paras: ['Family matters are dealt with sensitively and privately. Our aim is a workable agreement wherever one is possible, and firm representation where it is not.'],
+      bullets: ['Judicial separation and divorce', 'Custody, access and guardianship',
+                'Maintenance and financial provision', 'Cohabitants’ rights and separation agreements',
+                'Applications for safety and barring orders'] },
+    { title: 'Agriculture',
+      summary: 'Land, entitlements and farm succession, advised by people who know how farms actually work.',
+      paras: ['Farming clients are a substantial part of our practice. Land transactions, family transfers and partnership arrangements each carry tax and legal consequences that are best considered together, and well in advance.'],
+      bullets: ['Land purchase, sale and transfer within the family',
+                'Farm partnerships and company structures', 'Rights of way, boundaries and title queries',
+                'Entitlements, leases and conacre agreements', 'Succession planning and agricultural relief'] },
+    { title: 'Personal Injury Claims',
+      summary: 'If you were injured and someone else was at fault, early advice can make a real difference to the outcome.',
+      paras: ['If you have suffered an injury and someone else was at fault, it may be possible for you to bring a compensation claim. You should seek legal advice as soon as possible for the best chance of making a successful claim, whether the injury resulted from negligence on the part of your employer, a road traffic accident, a slip or fall in a public space, or bullying or harassment in your workplace.',
+              'An injury can make it difficult or impossible to work and can have long-term effects on your health. Irish law offers protection to those who suffer an injury that was not their fault, and our specialist solicitors can guide you through it.'],
+      bullets: ['Workplace accidents and employer negligence', 'Road traffic accidents',
+                'Slips, trips and falls in public places', 'Bullying and harassment at work',
+                'Applications to the Injuries Resolution Board and court proceedings'],
+      note: 'In contentious business, a solicitor may not calculate fees or other charges as a percentage or proportion of any award or settlement.' },
+    { title: 'Medical Negligence',
+      summary: 'Where treatment fell below the standard owed to you, we investigate it properly and independently.',
+      paras: ['Medical negligence cases turn on expert evidence and careful preparation. We assess the issues before anything is issued, arrange independent expert review where appropriate, and explain the findings clearly.'],
+      bullets: ['Misdiagnosis and delayed diagnosis', 'Surgical and treatment errors',
+                'Birth injuries', 'Independent expert medical reports', 'Advice on limitation periods and next steps'],
+      note: 'In contentious business, a solicitor may not calculate fees or other charges as a percentage or proportion of any award or settlement.' },
+    { title: 'Immigration Law',
+      summary: 'Residency, permissions and citizenship for individuals, families and employers.',
+      paras: ['We act for clients locally and internationally on immigration matters, from a first permission through to naturalisation, and we keep applications moving with the documentation right the first time.'],
+      bullets: ['Visas, residence permissions and renewals', 'Citizenship and naturalisation applications',
+                'Employment permits and employer support', 'Family reunification',
+                'Reviews and appeals of refused applications'] }
+  ];
+
+  principles = [
+    { n: '01', title: 'We listen first', body: 'A reputation built on listening to clients and giving clear, expert advice promptly.' },
+    { n: '02', title: 'No service you don’t need', body: 'We do not try to sell you services that you do not genuinely need, and we say so when nothing needs doing.' },
+    { n: '03', title: 'One system, one clear picture', body: 'Every file runs on an integrated practice management system, so we know exactly where your case stands.' }
+  ];
+
+  accreditations = [
+    { name: 'STEP Ireland', note: 'Trust & estate practitioners', href: 'https://www.step.org/branches/step-ireland' },
+    { name: 'Law Society of Ireland', note: 'Professional regulator', href: 'https://www.lawsociety.ie/' }
+  ];
+
+  team = [
+    { name: 'Margarita Purtill', role: 'Solicitor', areas: 'Business law, wills, probate, trusts & estates, family law', email: 'reception@pwmsolicitors.ie', slot: 'pwm-team-1' },
+    { name: 'Profile to follow', role: 'Solicitor', areas: 'Practice areas to be confirmed', email: 'reception@pwmsolicitors.ie', slot: 'pwm-team-2' },
+    { name: 'Profile to follow', role: 'Solicitor', areas: 'Practice areas to be confirmed', email: 'reception@pwmsolicitors.ie', slot: 'pwm-team-3' },
+    { name: 'Profile to follow', role: 'Solicitor', areas: 'Practice areas to be confirmed', email: 'reception@pwmsolicitors.ie', slot: 'pwm-team-4' },
+    { name: 'Profile to follow', role: 'Support team', areas: 'Practice areas to be confirmed', email: 'reception@pwmsolicitors.ie', slot: 'pwm-team-5' },
+    { name: 'Profile to follow', role: 'Support team', areas: 'Practice areas to be confirmed', email: 'reception@pwmsolicitors.ie', slot: 'pwm-team-6' }
+  ];
+
+  offices = [
+    { label: 'Office 01', city: 'Abbeyfeale', address: 'The Square, Abbeyfeale, Co. Limerick. V94 D37T', phone: '068 31106 / 068 32099', tel: 'tel:+3536831106', dx: 'DX58001' },
+    { label: 'Office 02', city: 'Listowel', address: '87 Church Street, Listowel, Co. Kerry. V31 E122', phone: '068 28766', tel: 'tel:+3536828766', dx: 'DX85008' }
+  ];
+
+  go = (page, svc) => {
+    const nextSvc = svc == null ? this.state.svc : svc;
+    if (typeof window !== 'undefined') {
+      const href = this.hrefFor(page, nextSvc);
+      if (window.location.hash !== href) window.history.pushState(null, '', href);
+      window.scrollTo(0, 0);
+    }
+    this.setState({ page, navOpen: false, svc: nextSvc });
+  };
+
+  field = (k) => (e) => this.setState({ form: Object.assign({}, this.state.form, { [k]: e.target.value }) });
+
+  renderVals() {
+    const p = this.state.page;
+    const decorated = this.services.map((s, i) => Object.assign({}, s, {
+      n: String(i + 1).padStart(2, '0'),
+      href: this.hrefFor('service', i),
+      open: (e) => { if (e) e.preventDefault(); this.go('service', i); }
+    }));
+    const heroMode = this.props.heroMode ?? 'photo';
+    const nav = [
+      { label: 'Services', page: 'services' },
+      { label: 'Our team', page: 'team' },
+      { label: 'Contact', page: 'contact' }
+    ].map(n => ({
+      label: n.label,
+      href: this.hrefFor(n.page),
+      current: (p === n.page || (n.page === 'services' && p === 'service')) ? 'page' : undefined,
+      tone: (p === n.page || (n.page === 'services' && p === 'service')) ? 'var(--color-accent-700)' : 'var(--color-text)',
+      go: (e) => { e.preventDefault(); this.go(n.page); }
+    }));
+    const isMobile = this.state.vw < 860;
+    const mobileNav = [{ label: 'Home', page: 'home' }].concat([
+      { label: 'Services', page: 'services' },
+      { label: 'Our team', page: 'team' },
+      { label: 'Contact', page: 'contact' }
+    ]).map(n => ({
+      label: n.label,
+      href: this.hrefFor(n.page),
+      current: (p === n.page || (n.page === 'services' && p === 'service')) ? 'page' : undefined,
+      tone: (p === n.page || (n.page === 'services' && p === 'service')) ? 'var(--color-accent-700)' : 'var(--color-text)',
+      go: (e) => { e.preventDefault(); this.go(n.page); }
+    }));
+    return {
+      navItems: nav,
+      mobileNav,
+      isMobile, isDesktop: !isMobile,
+      navOpen: this.state.navOpen,
+      toggleNav: (e) => { e.preventDefault(); this.setState({ navOpen: !this.state.navOpen }); },
+      skipToContent: () => {
+        const href = this.hrefFor(p, this.state.svc);
+        setTimeout(() => {
+          window.history.replaceState(null, '', href);
+          document.querySelector('[data-pwm-page]')?.focus({ preventScroll: true });
+        }, 0);
+      },
+      goHome: (e) => { e.preventDefault(); this.go('home'); },
+      goServices: (e) => { e.preventDefault(); this.go('services'); },
+      goTeam: (e) => { e.preventDefault(); this.go('team'); },
+      goContact: (e) => { e.preventDefault(); this.go('contact'); },
+      isHome: p === 'home', isServices: p === 'services', isService: p === 'service',
+      isTeam: p === 'team', isContact: p === 'contact',
+      heroPhoto: heroMode === 'photo', heroPlate: heroMode === 'plate',
+      showTestimonial: this.props.showTestimonial ?? true,
+      showAccreditations: this.props.showAccreditations ?? true,
+      showForm: this.props.showForm ?? true,
+      services: decorated,
+      svc: decorated[this.state.svc],
+      svcOthers: decorated.filter((_, i) => i !== this.state.svc).slice(0, 5),
+      principles: this.principles,
+      accreditations: this.accreditations,
+      offices: this.offices,
+      team: this.team.map(m => Object.assign({}, m, { mailto: 'mailto:' + m.email })),
+      form: this.state.form,
+      onName: this.field('name'), onEmail: this.field('email'),
+      onPhone: this.field('phone'), onMsg: this.field('msg'),
+      officeAbb: this.state.office === 'Abbeyfeale', officeLis: this.state.office === 'Listowel',
+      pickAbb: () => this.setState({ office: 'Abbeyfeale' }),
+      pickLis: () => this.setState({ office: 'Listowel' }),
+      sent: this.state.sent, notSent: !this.state.sent,
+      submit: (e) => {
+        e.preventDefault();
+        const f = this.state.form;
+        const subject = 'Website enquiry — ' + this.state.office + ' office';
+        const body = [
+          'Name: ' + f.name,
+          'Email: ' + f.email,
+          'Phone: ' + (f.phone || 'Not provided'),
+          'Preferred office: ' + this.state.office,
+          '',
+          'Enquiry:',
+          f.msg
+        ].join('\n');
+        if (typeof window !== 'undefined') {
+          window.location.href = 'mailto:reception@pwmsolicitors.ie?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+        }
+        this.setState({ sent: true });
+      }
+    };
+  }
+}
+</script>
+</body>
+</html>
