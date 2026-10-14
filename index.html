@@ -46,11 +46,10 @@
     </div>
   </div>
 
-  <header data-pwm-header="1" style="position:sticky;top:0;z-index:30;background:var(--color-bg);border-bottom:1px solid var(--color-divider)">
+  <header data-pwm-header="1" style="position:sticky;top:0;z-index:30;background:#fff;border-bottom:1px solid var(--color-divider)">
     <div style="width:100%;max-width:1240px;margin:0 auto;padding:0 clamp(16px,4vw,40px);display:flex;align-items:center;gap:clamp(12px,3vw,36px);min-height:72px">
-      <a href="#/" onClick="{{ goHome }}" style="display:flex;flex-direction:column;line-height:1;margin-right:auto;color:var(--color-text)">
-        <span style="font-family:var(--font-heading);font-size:clamp(17px,4.6vw,24px);letter-spacing:-0.01em">PURTILL WOULFE MURPHY</span>
-        <span style="font-size:clamp(9px,2.4vw,11px);letter-spacing:0.24em;text-transform:uppercase;color:var(--color-accent-700);margin-top:5px">Solicitors, Kerry and Limerick</span>
+      <a href="#/" onClick="{{ goHome }}" class="brand-link" aria-label="Purtill Woulfe Murphy Solicitors LLP — Home">
+        <span class="brand-logo-frame"><img class="brand-logo" src="./assets/brand/pwm-logo-light.svg" width="213" height="213" alt="Purtill Woulfe Murphy Solicitors LLP"></span>
       </a>
       <sc-if value="{{ isDesktop }}" hint-placeholder-val="{{ true }}">
       <nav style="display:flex;align-items:center;gap:clamp(14px,2.2vw,30px)">
@@ -89,7 +88,7 @@
 
   <sc-if value="{{ isHome }}" hint-placeholder-val="{{ true }}">
   <main id="main-content" tabindex="-1" data-pwm-page="1">
-    <section style="width:100%;max-width:1240px;margin:0 auto;padding:clamp(32px,4.5vw,60px) clamp(16px,4vw,40px) clamp(28px,4vw,48px);display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:clamp(24px,3vw,48px);align-items:center">
+    <section style="width:100%;max-width:1240px;margin:0 auto;padding:clamp(32px,4.5vw,60px) clamp(16px,4vw,40px) clamp(28px,4vw,48px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:clamp(24px,3vw,48px);align-items:center">
       <div data-reveal="">
         <div style="display:flex;align-items:center;gap:12px;margin-bottom:20px">
           <span style="width:44px;height:1px;background:var(--color-accent)"></span>
@@ -391,10 +390,10 @@
     </div>
   </section>
 
-  <footer style="background:var(--color-accent-900);color:var(--color-bg)">
+  <footer style="background:#142036;color:var(--color-bg)">
     <div style="width:100%;max-width:1240px;margin:0 auto;padding:clamp(40px,5vw,64px) clamp(16px,4vw,40px) 28px;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:clamp(24px,3vw,48px)">
       <div>
-        <div style="font-family:var(--font-heading);font-size:22px;line-height:1.1;margin-bottom:10px">PURTILL WOULFE MURPHY<br>SOLICITORS</div>
+        <a href="#/" onClick="{{ goHome }}" class="brand-link brand-link-footer" aria-label="Purtill Woulfe Murphy Solicitors LLP — Home"><span class="brand-logo-frame"><img class="brand-logo" src="./assets/brand/pwm-logo-navy.svg" width="213" height="213" alt="Purtill Woulfe Murphy Solicitors LLP" loading="lazy"></span></a>
         <p style="font-size:14px;line-height:1.6;margin:0;opacity:0.72;max-width:34ch">A modern legal practice offering specialist advice, expertise and support to clients locally and internationally.</p>
       </div>
       <div>

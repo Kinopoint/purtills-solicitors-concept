@@ -7,6 +7,48 @@ body {
   min-width: 320px;
 }
 
+.brand-link {
+  display: block;
+  flex: none;
+  margin-right: auto;
+  padding: 14px 0;
+  line-height: 0;
+}
+
+.brand-logo-frame {
+  display: block;
+  width: 132px;
+  height: 108px;
+  overflow: hidden;
+}
+
+.brand-logo {
+  display: block;
+  width: 171px;
+  height: 171px;
+  max-width: none;
+  transform: translate(-19px, -31px);
+}
+
+.brand-link-footer {
+  width: fit-content;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 767px) {
+  .brand-link:not(.brand-link-footer) .brand-logo-frame {
+    width: 116px;
+    height: 95px;
+  }
+
+  .brand-link:not(.brand-link-footer) .brand-logo {
+    width: 150px;
+    height: 150px;
+    transform: translate(-17px, -27px);
+  }
+}
+
 .skip-link {
   position: fixed;
   top: 10px;
