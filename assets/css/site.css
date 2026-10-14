@@ -7,6 +7,29 @@ body {
   min-width: 320px;
 }
 
+[data-pwm-header] {
+  border-bottom: 3px solid var(--brand-sky) !important;
+}
+
+[data-pwm-header] a[aria-current="page"] {
+  text-decoration: underline;
+  text-decoration-color: var(--brand-red);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 7px;
+}
+
+.duotone {
+  background: var(--color-accent-2-200);
+}
+
+.duotone::after {
+  opacity: .3;
+}
+
+.btn-primary {
+  transition: background-color .2s ease, color .2s ease, border-color .2s ease;
+}
+
 .brand-link {
   display: block;
   flex: none;

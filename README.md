@@ -22,6 +22,8 @@ npm run check
 
 ## Review status
 
+- Colours follow the supplied `PWM_Colour_Palette.pdf`: Inky Blue `#142036`, Red `#ea5151`, Sky Blue `#96d4e6`, supporting teal `#1f5167` and warm neutral `#f4f3ef` (from the PDF's RGB values; its final HEX label is duplicated in error). The original supplied logo SVG colours are preserved. Red is reserved for large display text and primary actions; small text uses navy or teal. Button lettering uses a slightly darker navy for readable contrast on the exact brand red.
+
 - The site is intentionally marked `noindex` and `robots.txt` disallows crawling.
 - Portraits and the hero image remain design placeholders until approved photography is supplied.
 - Team size, biographies, testimonials, accreditations, service copy and enquiry routing require solicitor approval before a production launch.

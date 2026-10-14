@@ -40,15 +40,20 @@
 }
 
 :root {
-  --color-bg: #f2f2f3;
-  --color-surface: #e9e9ea;
-  --color-text: #1d1f20;
-  --color-accent: #5980a6;
-  --color-accent-2: #728fab;
-  --color-divider: color-mix(in srgb, #1d1f20 16%, transparent);
+  /* PWM Colour Palette.pdf: supplied primary and secondary screen colours. */
+  --brand-navy: #142036;
+  --brand-red: #ea5151;
+  --brand-sky: #96d4e6;
+  --brand-teal: #1f5167;
+  --color-on-red: #101a2b;
+  --color-bg: #f4f3ef;
+  --color-surface: #e6e5e4;
+  --color-text: var(--brand-navy);
+  --color-accent: var(--brand-navy);
+  --color-accent-2: var(--brand-sky);
+  --color-divider: color-mix(in srgb, var(--brand-navy) 18%, transparent);
 
-  /* Tonal ramps — generated in OKLCH on one shared lightness scale, so the
-     same step of any role matches the others in visual value. */
+  /* Supporting tints retain the supplied palette's navy and sky-blue roles. */
   --color-neutral-100: #f5f5f8;
   --color-neutral-200: #e7e7ea;
   --color-neutral-300: #d4d4d7;
@@ -59,25 +64,25 @@
   --color-neutral-800: #424244;
   --color-neutral-900: #2b2b2d;
 
-  --color-accent-100: #eef6ff;
-  --color-accent-200: #d6ebff;
-  --color-accent-300: #b5d9fd;
-  --color-accent-400: #94bce3;
-  --color-accent-500: #749dc4;
-  --color-accent-600: #597ea3;
-  --color-accent-700: #416180;
-  --color-accent-800: #2c455d;
-  --color-accent-900: #1d2d3d;
+  --color-accent-100: #edf3f4;
+  --color-accent-200: #d8e4e7;
+  --color-accent-300: #b6cbcf;
+  --color-accent-400: #92a7ad;
+  --color-accent-500: #607f8b;
+  --color-accent-600: #386479;
+  --color-accent-700: var(--brand-teal);
+  --color-accent-800: #19384e;
+  --color-accent-900: var(--brand-navy);
 
-  --color-accent-2-100: #eef6ff;
-  --color-accent-2-200: #d6ebff;
-  --color-accent-2-300: #bdd8f2;
-  --color-accent-2-400: #9ebbd8;
-  --color-accent-2-500: #7e9cb8;
-  --color-accent-2-600: #627d98;
-  --color-accent-2-700: #486077;
-  --color-accent-2-800: #314457;
-  --color-accent-2-900: #1f2d3a;
+  --color-accent-2-100: #edf7fa;
+  --color-accent-2-200: #d7eef4;
+  --color-accent-2-300: #b9e2ee;
+  --color-accent-2-400: var(--brand-sky);
+  --color-accent-2-500: #6db8ce;
+  --color-accent-2-600: #41869d;
+  --color-accent-2-700: #28647c;
+  --color-accent-2-800: var(--brand-teal);
+  --color-accent-2-900: var(--brand-navy);
 
   --font-heading: "Barlow Condensed", system-ui, sans-serif;
   --font-heading-weight: 600;
@@ -134,7 +139,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: var(--font-headi
 
 .duotone{position:relative;overflow:hidden}
 .duotone::after{content:"";position:absolute;inset:0;pointer-events:none;
-  background:var(--color-accent);mix-blend-mode:color}
+  background:var(--brand-sky);mix-blend-mode:color}
 
 /* ══════════════════════════════════════════════════════════════════════════
    Components — built with the tokens above. Plain CSS
@@ -187,9 +192,9 @@ figcaption {
 }
 .btn svg { display: block; }
 .btn:disabled { opacity: 0.45; cursor: not-allowed; }
-.btn-primary { background: var(--color-accent-700); border-color: var(--color-accent-700); color: var(--color-bg); }
-.btn-primary:hover { background: var(--color-accent-800); border-color: var(--color-accent-800); }
-.btn-primary:active { background: var(--color-accent-900); border-color: var(--color-accent-900); }
+.btn-primary { background: var(--brand-red); border-color: var(--brand-red); color: var(--color-on-red); }
+.btn-primary:hover { background: var(--brand-navy); border-color: var(--brand-navy); color: var(--color-bg); }
+.btn-primary:active { background: var(--brand-teal); border-color: var(--brand-teal); color: var(--color-bg); }
 .btn-secondary { border-color: var(--color-divider); }
 .btn-secondary:hover { background: color-mix(in srgb, var(--color-text) 7%, transparent); }
 .btn-secondary:active { background: color-mix(in srgb, var(--color-text) 14%, transparent); }
